@@ -1,3 +1,4 @@
 HH.Route.register({
-	"": wg.StartPresenter.init
+	"": wg.StartPresenter.init,
+	"wheel/": wg.WheelPresenter.init
 });

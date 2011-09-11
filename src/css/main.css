@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'CloisterBlackLight';
+    src: url('cloisterblack-webfont.eot');
+    src: url('cloisterblack-webfont.eot?#iefix') format('embedded-opentype'),
+         url('cloisterblack-webfont.woff') format('woff'),
+         url('cloisterblack-webfont.ttf') format('truetype'),
+         url('cloisterblack-webfont.svg#CloisterBlackLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+input {
+	font-family: 'CloisterBlackLight', 'Georgia', serif;
+}
+
+#wheel-container {
+/*    width: 480px;*/
+}
+
+.center{
+	margin: 0 auto;
+	width: 50px;
+}
+
+.button {
+	display: block;
+	font-size: 25px;
+	font-family: 'CloisterBlackLight', 'Georgia', serif;
+	color: #8422FF;
+}

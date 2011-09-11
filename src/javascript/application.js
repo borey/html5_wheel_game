@@ -4,7 +4,12 @@ wg.App = function() {
 		wg.EventBus.init();
 	};
 	
+	var changeLocationUrl = function(url){
+		window.location.href = url;
+	};
+	
 	return {
-		init: init
+		init: init,
+		changeLocationUrl: changeLocationUrl
 	}
 }();

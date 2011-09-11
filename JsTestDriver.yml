@@ -9,6 +9,7 @@ load:
   - src/javascript/*.js
   - test/presenter/*.js
   - test/model/*.js
+  - test/*.js
     
 exclude:
 #  - src/javascript/wheel_game_*.js
