@@ -1,0 +1,17 @@
+/**
+* @depends src/javascript/namespace.js
+* @depends src/javascript/lib/dom.js
+* @depends src/javascript/lib/draw.js
+* @depends src/javascript/util.js
+		
+* @depends src/javascript/presenter/start_presenter.js
+* @depends src/javascript/view/start_view.js
+		
+* @depends src/javascript/model/user_model.js
+		
+* @depends src/javascript/application.js
+* @depends src/javascript/route.js
+* @depends src/javascript/event_constants.js
+* @depends src/javascript/event_aggregator.js
+* @depends src/javascript/event_bus.js
+*/

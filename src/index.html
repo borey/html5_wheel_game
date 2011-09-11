@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Wheel Game</title>
+		<meta charset="utf-8" />
+		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=false" name="viewport">
+		<meta name="apple-mobile-web-app-capable" content="yes" /> 
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+		<meta content="telephone=no" name="format-detection">
+		<meta content="address=no" name="format-detection">
+<!-- Start css -->		
+		<link rel="stylesheet" href="css/reset.css" type="text/css" />
+		<link rel="stylesheet" href="css/main.css" type="text/css" />
+<!-- End css -->
+
+<!--    External Library-->
+		<script src="javascript/lib/hash_handler.min.js"></script>
+
+<!-- Start javascript -->
+		<script src="javascript/namespace.js"></script>
+		<script src="javascript/lib/dom.js"></script>
+		<script src="javascript/lib/draw.js"></script>
+		<script src="javascript/util.js"></script>
+		
+		<script src="javascript/presenter/start_presenter.js"></script>
+		<script src="javascript/view/start_view.js"></script>
+		
+		<script src="javascript/model/user_model.js"></script>
+		
+		<script src="javascript/application.js"></script>
+		<script src="javascript/route.js"></script>
+		<script src="javascript/event_constants.js"></script>
+		<script src="javascript/event_aggregator.js"></script>
+		<script src="javascript/event_bus.js"></script>
+<!-- End javascript -->		
+	</head>
+	
+	<body>
+	    <div id="wheel-container"></div>
+	    
+	    <script>
+	        window.onload = function(){
+	            wg.App.init();
+	        }
+	    </script>
+	</body>
+</head>

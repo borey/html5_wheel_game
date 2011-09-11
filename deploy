@@ -1,0 +1,71 @@
+#!/bin/bash
+version=$1
+date_now=`date '+%Y%m%d%H%M'`
+css_filename="wheel_game_${version}.css"
+javascript_filename="wheel_game_${version}.js"
+is_supported=false
+EXPECTED_ARGS=1
+
+show_warning()
+{
+	echo ""
+	echo ""
+	echo "***WARNING!!!*** Project is not deployed"
+	echo ""
+	echo ""
+}
+
+#check for number of params
+if [ $# -ne $EXPECTED_ARGS ]; then
+	echo "warning variable"
+	echo "Need 1 arguments: version_number"
+	show_warning
+	exit
+fi
+
+minify_css()
+{
+	echo "Merging CSS files..."
+	juicer merge -f -e none -c none juicer.css -o src/css/${css_filename}
+	echo "Merge JavaScript done!!!"
+
+	include_css_file="<link rel='stylesheet' type='text/css' href='css/${css_filename}?${date_now}' />"
+	sed -i "/<!-- Start css -->/,/<!-- End css -->/c${include_css_file}" src/index.html
+	
+	echo "Merging CSS completed!"
+	
+}
+
+minify_js()
+{
+	echo "Merge JavaScript..."
+	juicer merge -s -f -t js -c none juicer -o src/javascript/${javascript_filename}
+	perl -CD -pe 'tr/\x{feff}//d' -i src/javascript/${javascript_filename}
+	echo "Merge JavaScript done!!!"
+
+	include_file="<script type='text/javascript' src='javascript/${javascript_filename}?${date_now}'></script>"
+	sed -i "/<!-- Start javascript -->/,/<!-- End javascript -->/c${include_file}" src/index.html
+}
+
+#include_date_time_for_static_files()
+#{
+#	date_now=`date '+%Y%m%d%H%M'`
+
+#	sed -i "s/\.js/&?${date_now}/g" src/index.html
+#	sed -i "s/\.css/&?${date_now}/g" src/index.html
+#}
+
+hg update -C
+rm -rf src/javascript/wheel_game_*
+rm -rf src/css/wheel_game_*
+
+echo "start minify CSS..."
+minify_css
+
+echo "start minify javascript..."
+minify_js
+
+#echo "append timestamp to static files..."
+#include_date_time_for_static_files
+
+echo "Wheel Game is deployed!"

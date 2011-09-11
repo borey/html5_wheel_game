@@ -1,0 +1,5 @@
+wg.Events = function() {	
+	return {
+		 
+	}
+}();
